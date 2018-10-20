@@ -32,19 +32,24 @@
     function playRound(playerSelection, computerSelection){
       
       let result = "";
+      let roundString;
 
       if ((playerSelection == "rock" && computerSelection == "scissors") || 
           (playerSelection == "scissors" && computerSelection == "paper") ||
             (playerSelection == "paper" && computerSelection == "rock")) {
-              result = "You Win! " + playerSelection + " beats " + computerSelection;
+              roundString = "You Win! " + playerSelection + " beats " + computerSelection;
+              result = 1;
           }
       else if (playerSelection == computerSelection) {
-        result = "Draw!"
+        roundString = "Draw! No points."
+        result = 0;
       }
       else{
-        result = "You Lose. " + computerSelection + " beats " + playerSelection;
+        roundString = "You Lose. " + computerSelection + " beats " + playerSelection;
+        result = -1;
       }
-
+      
+      console.log(roundString);
       return result;      
     }
 
@@ -56,14 +61,41 @@
         return false;
       }
     }
-    
 
-    let player = prompt("RPS").toLowerCase();
-    let computer = computerPlay();
-    console.log(playRound(player,computer));
+    function finalResult(result){
+
+      let outcome = "";
+
+      if (result > 0) {
+        outcome = "You Win!!"
+      }
+      else if (result == 0) {
+        outcome = "Draw!"
+      }
+      else {
+        outcome = "You Lose."
+      }
+
+      return outcome;
+    }
+
+    function game(){
+
+      let result = 0;
+      let player = "";
+      let computer = "";
 
 
+      for (let i = 0; i < 5; i++) { 
+        player = prompt("RPS").toLowerCase();
+        let computer = computerPlay();
+        result += playRound(player,computer);
+      }
 
+      console.log(finalResult(result));
+    }
+
+    game();
 
   </script>
 </body>
