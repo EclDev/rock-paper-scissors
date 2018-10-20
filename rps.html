@@ -5,7 +5,30 @@
 </head>
 <body>
   <script>
- 	
+    /*Function to get a random int taken from: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random*/
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    /*Returns string rock, paper, or scissors at random*/
+ 	  function computerPlay() {
+
+      let randInt = getRandomInt(3);
+      let compChoice = "";
+
+      if (randInt == 2) {
+        compChoice = "rock";
+      }
+      else if (randInt == 1) {
+        compChoice = "paper";
+      }
+      else {
+        compChoice = "scissors";
+      }
+
+      return compChoice;
+
+    }
   </script>
 </body>
 </html>
