@@ -29,6 +29,7 @@
       return compChoice;
     }
 
+    /*Plays one round of RPS prints round results to console and returns an integer for win, draw, or loss.*/
     function playRound(playerSelection, computerSelection){
       
       let result = "";
@@ -53,6 +54,7 @@
       return result;      
     }
 
+    /*(UNUSED) Checks that the user inputted at correct value for RPS*/
     function choiceCheck(playerChoice) {
       if ((playerChoice != "rock") || (playerChoice != "paper") || (playerChoice != "scissors")){
         return true;
@@ -62,6 +64,7 @@
       }
     }
 
+    /*Determines the final result of the five round game*/
     function finalResult(result){
 
       let outcome = "";
@@ -79,6 +82,7 @@
       return outcome;
     }
 
+    /*Plays a five round game of rock, paper, scissors*/
     function game(){
 
       let result = 0;
