@@ -36,17 +36,33 @@
       if ((playerSelection == "rock" && computerSelection == "scissors") || 
           (playerSelection == "scissors" && computerSelection == "paper") ||
             (playerSelection == "paper" && computerSelection == "rock")) {
-              result = "You Win!!";
+              result = "You Win! " + playerSelection + " beats " + computerSelection;
           }
       else if (playerSelection == computerSelection) {
         result = "Draw!"
       }
       else{
-        result = "You Lose."
+        result = "You Lose. " + computerSelection + " beats " + playerSelection;
       }
 
       return result;      
     }
+
+    function choiceCheck(playerChoice) {
+      if ((playerChoice != "rock") || (playerChoice != "paper") || (playerChoice != "scissors")){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+    
+
+    let player = prompt("RPS").toLowerCase();
+    let computer = computerPlay();
+    console.log(playRound(player,computer));
+
+
 
 
   </script>
