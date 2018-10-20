@@ -27,8 +27,28 @@
       }
 
       return compChoice;
-
     }
+
+    function playRound(playerSelection, computerSelection){
+      
+      let result = "";
+
+      if ((playerSelection == "rock" && computerSelection == "scissors") || 
+          (playerSelection == "scissors" && computerSelection == "paper") ||
+            (playerSelection == "paper" && computerSelection == "rock")) {
+              result = "You Win!!";
+          }
+      else if (playerSelection == computerSelection) {
+        result = "Draw!"
+      }
+      else{
+        result = "You Lose."
+      }
+
+      return result;      
+    }
+
+
   </script>
 </body>
 </html>
